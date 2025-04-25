@@ -53,7 +53,8 @@ db_dependency = Annotated[Session, Depends(get_db)]
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    new_string = "Anathajith is Gay af!!"
+    return templates.TemplateResponse("index.html", {"request": request, "new_string": new_string})
 
 @app.get("/add-question", response_class=HTMLResponse)
 async def add_question_page(request: Request):
